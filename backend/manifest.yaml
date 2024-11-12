@@ -32,7 +32,7 @@ spec:
       containers:
       - name: backend
         image: joindevops/backend:v1
-        envfrom:
+        envFrom: # Corrected key
         - configMapRef:
             name: backend
 ---
@@ -44,11 +44,10 @@ metadata:
 spec:
   selector:
     app: backend
-    tier: apiu
+    tier: api # Corrected label
     project: expense
   ports:
   - name: backend-port
     protocol: TCP
     port: 8080 # service port
     targetPort: 8080 # container port
-        
