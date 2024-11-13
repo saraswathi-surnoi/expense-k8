@@ -31,13 +31,13 @@ metadata:
   name: frontend
   namespace: expense
 spec:
-   type: LoadBalancer
-   selector:
-     app: frontend
-     tier: web # Corrected label
-     project: expense
+  type: LoadBalancer
+  selector:
+    app: frontend
+    tier: web
+    project: expense
   ports:
   - name: frontend-port
     protocol: TCP
-    port: 80 # service port
-    targetPort: 80 # container port
+    port: 80
+    targetPort: 80
